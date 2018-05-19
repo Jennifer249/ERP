@@ -1,4 +1,3 @@
-
 ---
 typora-root-url: image
 ---
@@ -14,8 +13,8 @@ typora-root-url: image
 
 订单查询：
 
-![show1](/image/show1.png)
+![9](/image/9.png)
 
 新增订单：
 
-![show2](/image/show2.png)
+![10](/image/10.png)
