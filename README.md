@@ -1,5 +1,5 @@
 ---
-typora-root-url: image
+typora-root-url: jpg
 ---
 
 # ERP
@@ -13,8 +13,8 @@ typora-root-url: image
 
 订单查询：
 
-![1](jpg/1.jpg)
+![1](/1.png)
 
 新增订单：
 
-![2](jpg/2.jpg)
+![2](/2.png)
