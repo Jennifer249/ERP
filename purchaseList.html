@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>采购单</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="erp.css"/>
+
+</head>
+<body>
+	<div id="container" class="cf">
+		<div class="layoutCls">
+			<div class="left-menu">
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<h1 style="color: #EEEEEE;"> &nbsp;&nbsp;隆 楷</h1></li>
+					<li>
+						<a href="main.html" role="button" >
+							<span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+						</a>
+					</li>
+					<li class="active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="purchaseplan.html">采购计划</a></li>
+							<li><a href="purchaseList.html">采购单</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="saleBook.html">销售确认书</a></li>
+							<li><a href="offPrice.html">特价表</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="putInStorage.html">进仓单</a></li>
+							<li><a href="分切出仓修改.html">分切出仓单</a></li>
+							<li><a href="fqcp.html">分切成品出仓单</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="shouldGet.html">应收款明细表</a></li>
+							<li><a href="shouldPaid.html">应付款明细表</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="icon-error"></i>
+							<span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							...
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="icon-review"></i>
+							<span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="system.html">系统参数设置</a></li>
+							<li><a href="storehouse.html">仓库管理</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="default-main" style="left:129px;">
+				<div class="main-hd cf">
+					<div class="right">
+						<ul class="advanced-menu cf left">
+							<li style="position: relative">
+								<a href="login.html" style="color: #000000;text-decoration:none">退出</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="main-bd" style="height: 632px;">
+					<div class="wcsearch" style="padding-left: 20%;">
+						<form class="form-inline" style="display: inline">
+							<div class="form-group">
+								<label for="exampleInputName2">单据日期（2018-01-01）：</label>
+								<input type="text" class="form-control" id="exampleInputName2" name="beginTime" placeholder="2018-01-01">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail2">至</label>
+								<input type="text" class="form-control" id="exampleInputEmail2" name="endTime" placeholder="2018-01-04">
+							</div>
+
+						</form>
+						<button type="submit" class="btn btn-default" onclick="searchbook()">查询</button>
+						<button class="btn btn-default" onclick="addbook()">新增</button>
+					</div>
+					<div class="rec_container" style="height: 632px; display: block;">
+						<div class="no"> 请输入日期查询或新增</div>
+						<div class="ui-print" style="display: none;">
+							<div class="wtitle">采购单</div>
+							<div class="grid-wrap" style="position:relative;">
+								<!--最外层form-->
+								<form class="form-inline">
+									<div style="display: block;">
+										<div style="float: left;margin-left:25px ;">
+											<div class="form-group" style="display: block;">
+												<label for="exampleInputName2">买&nbsp; 方:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<!--<label>&nbsp;&nbsp;隆 楷 纸 业</label>-->
+												<input type="text" class="form-control" placeholder="隆 楷 纸 业" disabled="disabled">
+											</div>
+											<div class="form-group" style="display: block;">
+												<label for="name">卖&nbsp; 方:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<input type="text" class="form-control" id="name" placeholder="" name="name">
+											</div>
+										</div>
+
+										<div style="float: right;">
+											<div class="form-group" style="display: block;">
+												<label for="orderno">采购编号:</label>
+												<input type="text" class="form-control" id="orderno" placeholder="0001" name="orderno">
+											</div>
+											<div class="form-group" style="display: block;">
+												<label for="ordertime">订单日期: </label>
+												<input type="text" class="form-control" id="ordertime" placeholder="2018-01-01" name="ordertime">
+											</div>
+
+										</div>
+									</div>
+
+									<div style="display: block;">
+										<div class="form-group" style="margin-top: 34px; margin-left: 3px;">
+											<label for="numbern">根据买卖双方</label>
+											<input type="text" class="form-control" id="numbern" placeholder="无" name="numbern">
+											<label for="numbern">号销售合同，买方兹确认向卖方订购如下货物</label>
+										</div>
+									</div>
+
+									<div style="margin-top: 20px;">
+										<table class="table table-bordered table-hover l">
+											<thead style="color:rgba(33, 32, 26, 0.81)" id="saleb">
+												<tr>
+													<th>品牌</th>
+													<th>纸种</th>
+													<th>级别</th>
+													<th>克重</th>
+													<th>规格</th>
+													<th>单位</th>
+													<th>数量</th>
+													<th>件数</th>
+													<th>单价</th>
+													<th>总价</th>
+												</tr>
+											</thead>
+											<tr>
+												<td colspan="6" align="center">合计</td>
+												<td><input size="9"></td>
+												<td><input size="9"></td>
+												<td><input size="9"></td>
+												<td><input size="9"></td>
+											</tr>
+										</table>
+									</div>
+
+									<div style="display: block;">
+
+										<div>
+											<label for="numberr">双方确认该确认书经双方签章后传真确认有效，本确认书未尽事宜按双方</label>
+											<input type="text" class="form-control" id="numberr" placeholder="无" name="numberr">
+											<label for="exampleInputName2">号合同中的条款执行。</label>
+										</div>
+
+										<div class="form-group" style="margin-left: 25px;margin-top: 10px;">
+											<label for="exampleInputName2">买方:</label>
+											<label>&nbsp;&nbsp;隆 楷 纸 业</label>
+
+										</div>
+										<div class="form-group" style="margin-left: 100px; margin-top: 10px;">
+											<label for="exampleInputName2">卖方:</label>
+
+										</div>
+										<div class="form-group" style="margin-left: 305px; margin-top: 10px;">
+											<label for="tel">电话:</label>
+											<input type="text" class="form-control" id="tel" name="tel">
+										</div>
+										<div class="form-group" style="margin-left: 90px; margin-top: 10px;">
+											<label for="address">地址:</label>
+											<input type="text" class="form-control" id="address" name="address">
+										</div>
+
+									</div>
+
+									<button style="margin-top: 10px;  float: right;" type="submit" class="btn btn-default" onclick="save()">保存</button>
+								</form>
+								<!--最外层form结束-->
+								<button style="margin-top: 10px;" class="btn btn-default" onclick="addrow()">增加一行</button>
+								<button style="margin-top: 10px;" class="btn btn-default" onclick="deleterow()">删除一行</button>
+							</div>
+						</div>
+						<div class="ui-print" style="display: none;">
+							<div class="grid-wrap">
+								<table class="table table-bordered table-hover">
+									<thead style="color:rgba(33, 32, 26, 0.81)" id="searorder">
+										<tr>
+											<th>采购编号</th>
+											<th>订单日期</th>
+										</tr>
+									</thead>
+								</table>
+								<form class="form-inline">
+									<div class="form-group">
+										<label for="deleteno">删除的采购单号:</label>
+										<input type="text" class="form-control" id="deleteno" name="deleteno" placeholder="0001">
+									</div>
+								</form>
+								<button class="btn btn-default" onclick="deleteno()">删除</button>
+							</div>
+						</div>
+						<div class="attention2" style="display:none">无记录</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var count = 0;
+	function addrow(){
+		count++;
+//		var $a = $("#a").clone();
+//		$("#saleb").append($a);
+		var html='<tr>';
+			html += '<td><input size="9" name="band'+count+'"></td>' + '<td><input size="9" name="papertype'+ count+'"></td>' + '<td><input size="9" name="level'+ count+'"></td>' +'<td><input size="9" name="weight'+ count+'"></td>' + '<td><input size="9" name="format'+ count+'"></td>' + '<td><input size="9" name="ssum'+ count+'"></td>' + '<td><input size="9" name="jian'+ count+'"></td>' + '<td><input size="9" name="symble'+ count+'"></td>' + '<td><input size="9" name="sumaccount'+ count+'"></td>'+'<td><input size="9" name="allsum'+ count+'"></td>'+'</tr>';
+		$("#saleb").append(html);	
+	 var i = 1;
+        $(".td").each(function(){       //增加一行后重新更新序号1,2,3......
+        $(this).html(i++);
+        })
+        $(".l tr:last").find(":input").val('');   //将尾行元素克隆来的保存的值清空
+
+        }
+	function deleterow(){
+		if(count == 0) {
+			alert("没有新增");
+			return;
+		}
+		else{
+			$(".l tr:eq(1)").remove();
+			count--;
+		}
+	}
+	function deleteno(){
+		var orderno = $('#deleteno').val();
+		$.ajax({
+			type:"GET",
+			data:{"orderno":orderno},
+			url:"purchaseL.php",
+			dataType:'json',
+			success:function(data){
+				if (data.success) {
+					alert("删除成功！");
+					//searchbook();
+				}
+				else
+				{
+					alert("题目传输出错");
+				}
+			},
+			error:function(data){
+				alert("wrong!");
+			}
+
+		})
+	}
+    function searchbook(){
+		$("#searorder").siblings().remove();
+		$('.no').hide();
+		$.ajax({
+			type:"GET",
+			url:'purchaseList.php',
+			data:$("form").serialize(),
+			dataType:'json',
+			success:function (data) {
+				if (data.success) {
+					alert(data.success);
+//					$('.ui-print>div').eq(0).hide();
+//					$('.ui-print>div').eq(1).show();
+					var list = data.list;
+					var html='<tbody><tr>';
+					for (var i = 0, len = list.length; i < len; i++) {
+						html +=  '<td>' + list[i].orderno + '</td>' + '<td>' + list[i].ordertime + '</td>' +'</tr>'
+						if(len != i+1)
+							html += '<tr>';
+					}
+					html+='</tbody>';
+					$("#searorder").after(html);
+					$('.rec_container>div').eq(1).hide();
+					$('.rec_container>div').eq(2).show();
+				}
+				else{
+					$('.attention2').show();
+				}
+			},
+			error:function(data){
+				alert("数据没传过来!");
+			}
+		})
+	}
+     function addbook(){
+     	$('.rec_container>div').eq(1).show();
+		$('.rec_container>div').eq(2).hide();
+     }
+	function save() {
+		$.ajax({
+			type:"post",
+			url:"purchaseList.php",
+			data:$("form").serialize(),
+			dataType:"json",
+			//async:false,
+			success:function(data){ //不用传success=》true
+				if(data.success){
+					$('.attention').show();
+					alert("成功！");
+				}
+				else{
+					alert("保存失败");
+				}
+			},
+			/*error:function(){
+			 alert("结果错误！");
+			 }*/
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert(XMLHttpRequest.status);
+				alert(XMLHttpRequest.readyState);
+				alert(textStatus);
+			}
+
+		})
+	}
+</script>

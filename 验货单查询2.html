@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>验货单</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="erp2.css"/>
+
+</head>
+<body>
+	<div id="container" class="cf">
+		<div class="layoutCls">
+			<div class="left-menu">
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<h1 style="color: #EEEEEE;"> &nbsp;&nbsp;隆 楷</h1></li>
+					<li>
+						<a href="main.html" role="button" >
+							<span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="purchaseplan.html">采购计划</a></li>
+							<li><a href="purchaseList.html">采购单</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="saleBook.html">销售确认书</a></li>
+							<li><a href="offPrice.html">特价表</a></li>
+						</ul>
+					</li>
+					<li  class="active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="putInStorage.html">进仓单</a></li>
+                        <li><a href="分切出仓修改.html">分切出仓单</a></li>
+                        <li><a href="fqcp.html">分切成品出仓单</a></li>
+                        <li><a href="出仓单.html">出仓单</a></li>
+                        <li><a href="出仓单查询2.html">出仓单查询</a></li>
+                        <li><a href="验货单.html">验货单</a></li>
+                        <li><a href="验货单查询2.html">验货单查询</a></li>
+                        <li><a href="问题表.html">问题表</a></li>
+                        <li><a href="问题表查询2.html">问题表查询</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="shouldGet.html">应收款明细表</a></li>
+							<li><a href="shouldPaid.html">应付款明细表</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="icon-error"></i>
+							<span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							 <li><a href="商品.html">商品管理</a></li>
+                         <li><a href="商品查询.html">商品管理查询</a></li>
+                        <li><a href="客户.html">客户管理</a></li>
+                         <li><a href="客户查询.html">客户管理查询</a></li>
+                        <li><a href="供应商.html">供应商管理</a></li>
+                         <li><a href="供应商查询.html">供应商管理查询</a></li>
+                        <li><a href="职员管理.html">职员管理</a></li>
+                        <li><a href="职员管理查询.html">职员管理查询</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="icon-review"></i>
+							<span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="system.html">系统参数设置</a></li>
+							<li><a href="storehouse.html">仓库管理</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="default-main" style="left:129px;">
+				<div class="main-hd cf">
+					<div class="right">
+						<ul class="advanced-menu cf left">
+							<li style="position: relative">
+								<a href="login.html" style="color: #000000;text-decoration:none">退出</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="main-bd" style="height: 632px;">
+					<div class="wcsearch">
+						<form class="form-inline" style="display: inline;margin-left: 70px;">
+							<div class="form-group">
+								<label for="corderno">按件号查询:</label>
+								<input type="text" class="form-control" id="corderno" name="corderno" placeholder="0001">
+							</div>
+						</form>
+						<button class="btn btn-default" onclick="look()">查看</button>
+					</div>
+					<div class="rec_container" style="height: 632px; display: block;">
+						<div class="ui-print">
+							<div class="wtitle">验货单</div>
+							<div class="grid-wrap" style="position:relative;">
+								<form class="form-inline">
+									<div style="margin-top: 20px;">
+										<table class="table table-bordered table-hover l">
+											<thead style="color:rgba(33, 32, 26, 0.81)" id="saleb">
+												<tr>
+													<td>品牌</td>
+													<td>纸种</td>
+													<td>级别</td>
+													<td>克重</td>
+													<td>规格</td>
+													<td>重量单位</td>
+													<td>件号</td>
+													<td>库存ID</td>
+													<td>进仓单号</td>
+													<td>供应商简称</td>
+													<td>采购单号</td>
+													<td>验货日期</td>
+												</tr>
+											</thead>
+										</table>
+									</div>
+								</form>
+								<form class="form-inline" style="display: inline;">
+									<div class="form-group">
+										<label for="deleteno">请输入件号:</label>
+										<input type="text" class="form-control" id="deleteno" name="deleteno" placeholder="0001">
+									</div>
+								</form>
+								<button class="btn btn-default" onclick="deleteno()">删除</button>
+							</div>
+						</div>
+						<div class="attention2" style="display:none">无记录</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	var count = 0;
+	//查看特价表
+	function look(){
+		var orderno = $('#corderno').val();
+		$.ajax({
+			type:"POST",
+			url:'putlnStorage.php',
+			data:{"orderno":orderno},
+			dataType:'json',
+			success:function (data) {
+				if (data.success) {
+					$('.rec_container>div').eq(1).show();
+					var list = data.list;
+					var html='<tbody><tr>';
+					for (var i = 0, len = list.length; i < len; i++) {
+						html += '<td>' + list[i].brand + '</td>' + '<td>' + list[i].papertype + '</td>' + '<td>' + list[i].level + '</td>' + '<td>' + list[i].g + '</td>' + '<td>' + list[i].specifications + '</td>' + '<td>' + list[i].weightunit + '</td>' + '<td>' + list[i].jianno + '</td>' + '<td>' + list[i].kuid +'</td>' + '<td>' + list[i].innum +'</td>' + '<td>' + list[i].supplier +'</td>' +  '<td>' + list[i].caino +'</td>' + '<td>' + list[i].yantime +'</td>' +'</tr>';
+						if(len != i+1)
+							html += '<tr>';
+					}
+					html+='</tbody>';
+					$("#saleb").after(html);
+//after是在一个节点后面增加元素，append是在一个节点内部的后面增加元素
+				}
+				else{
+					$('.attention2').show();
+				}
+			},
+			error:function(data){
+				alert("数据没传过来!");
+			}
+		})
+	}
+	function deleteno(){
+		var orderno = $('#deleteno').val();
+		$.ajax({
+			type:"GET",
+			data:{"orderno":orderno},
+			url:"saleB.php",
+			dataType:'json',
+			success:function(data){
+				if (data.success) {
+					alert("删除成功！");
+				}
+				else
+				{
+					alert("题目传输出错");
+				}
+			},
+			error:function(data){
+				alert("wrong!");
+			}
+
+		})
+	}
+
+</script>

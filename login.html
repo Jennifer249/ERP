@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="login.css">
+    <!--src页面必不可少的一部分，引入;href为引用-->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body  link = "blue" vlink = "red" alink="green">
+<div class="wrapper1">
+    <nav class="navbar navbar-toggleable-sm header-area" role="navigation">
+        <!--#不会刷新页面，而是回到页面顶部-->
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">erp</a>
+            </div>
+        </div>
+        <!--navbar-nav、nav加入链接的无序列表-->
+    </nav>
+    <div class="dialog1">
+        <div class="card1">
+            <div class="card-header1">
+                <h4>登录</h4>
+            </div>
+            <div class="card-block1">
+                <form method="post" action="login.php">
+                    <div class="form-group">
+                        <label for="user_name">账号：</label>
+                        <input autocomplete="off" class="form-control" id="user_name" type = "text" name = "账号" >
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password">密码:</label>
+                        <input  class="form-control" id="user_password" type = "password" name = "密码">
+                    </div>
+   					 <div class="radio" style="margin-bottom: 1rem;">
+                        <label class="radio-inline">
+                            <input type="radio"name = "类型" value = "male"checked>用户
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name = "类型" value = "female" checked>管理员
+                        </label>
+                    </div>
+                    <input style=" background-color: #32A7B8; border-color: #0493a7;"type = "submit" value="登录" class="btn btn-primary">
+                    <span style="float: right;"><a href="register.html">注册账号 </a><a href="forgetPassword.html">忘记密码？ <br></a></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer1">
+    Welcome to this platform！
+</footer>
+</body>
+</html>
+
+

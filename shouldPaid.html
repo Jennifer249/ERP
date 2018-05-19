@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>应付款帐明细表</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="erp.css"/>
+
+</head>
+<body>
+	<div id="container" class="cf">
+		<div class="layoutCls">
+			<div class="left-menu">
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<h1 style="color: #EEEEEE;"> &nbsp;&nbsp;隆 楷</h1></li>
+					<li>
+						<a href="main.html" role="button" >
+							<span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="purchaseplan.html">采购计划</a></li>
+							<li><a href="purchaseList.html">采购单</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="saleBook.html">销售确认书</a></li>
+							<li><a href="offPrice.html">特价表</a></li>
+			    		</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="putInStorage.html">进仓单</a></li>
+							<li><a href="分切出仓修改.html">分切出仓单</a></li>
+							<li><a href="fqcp.html">分切成品出仓单</a></li>
+							<li><a href="出仓单.html">出仓单</a></li>
+							<li><a href="出仓单查询2.html">出仓单查询</a></li>
+							<li><a href="验货单.html">验货单</a></li>
+							<li><a href="验货单查询2.html">验货单查询</a></li>
+							<li><a href="问题表.html">问题表</a></li>
+							<li><a href="问题表查询2.html">问题表查询</a></li>
+						</ul>
+					</li>
+					<li class="active">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="shouldGet.html">应收款明细表</a></li>
+							<li><a href="shouldPaid.html">应付款明细表</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="icon-error"></i>
+							<span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="商品.html">商品管理</a></li>
+							<li><a href="商品查询.html">商品管理查询</a></li>
+							<li><a href="客户.html">客户管理</a></li>
+							<li><a href="客户查询.html">客户管理查询</a></li>
+							<li><a href="供应商.html">供应商管理</a></li>
+							<li><a href="供应商查询.html">供应商管理查询</a></li>
+							<li><a href="职员管理.html">职员管理</a></li>
+							<li><a href="职员管理查询.html">职员管理查询</a></li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<i class="icon-review"></i>
+							<span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="system.html">系统参数设置</a></li>
+							<li><a href="storehouse.html">仓库管理</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="default-main" style="left:129px;">
+				<div class="main-hd cf">
+					<div class="right">
+						<ul class="advanced-menu cf left">
+							<li style="position: relative">
+								<a href="login.html" style="color: #000000;text-decoration:none">退出</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="main-bd" style="height: 632px;">
+					<div class="wcsearch" style="padding-left: 20%;">
+						<form class="form-inline" style="display: inline">
+							<div class="form-group">
+								<label for="exampleInputName2">单据日期（2018-01-01）：</label>
+								<input type="text" class="form-control" id="exampleInputName2" name="beginTime" placeholder="2018-01-01">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail2">至</label>
+								<input type="text" class="form-control" id="exampleInputEmail2" name="endTime" placeholder="2018-01-04">
+							</div>
+						</form>
+						<button type="submit" class="btn btn-default" onclick="getMonbill()">查询</button>
+					</div>
+					<div class="rec_container" style="height: 632px; display: block;">
+						<div class="no"> 请输入日期查询</div>
+						<!--表单由此开始-->
+						<!--<div class="ui-print" style="display: inline-block;display: none;">-->
+							<div class="ui-print" style="display: none;">
+							<div class="wtitle">应付款帐明细表</div>
+							<div class="grid-wrap">
+								<div class="grid-subtitle"> 日期: <span class="tbegin"> 2018-01-01 </span> 至 <span class="tend">2018-01-04 </span></div>
+								<table class="table table-bordered table-hover">
+									<thead style="color:rgba(33, 32, 26, 0.81)" id="add">
+										<tr>
+											<th>供应商</th>
+											<th>单据日期</th>
+											<th>单据编号</th>
+											<th>应付款</th>
+										</tr>
+									</thead>
+									<tr>
+										<td colspan="3">合计</td>
+										<td class="t1"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+							<div class="attention2" style="display:none">无记录</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+    
+    function getMonbill(){
+		$("#add").siblings().remove();
+		$('.no').hide();
+		$.ajax({
+			type:"GET",
+			url:'shouldPaid.php',
+			data:$("form").serialize(),
+			dataType:'json',
+			success:function (data) {
+				if (data.success) {
+					$('.rec_container>div').eq(0).hide();
+					$('.rec_container>div').eq(1).show();
+					var list = data.list;
+					var html='<tr>';
+					for (var i = 0, len = list.length; i < len; i++) {
+						html += '<td>' + list[i].supplier + '</td>' + '<td>' + list[i].time + '</td>' + '<td>' + list[i].num + '</td>' + '<td>' + list[i].shouldpaid + '</td>' +'</tr>';
+						if(len != i+1)
+							html += '<tr>';
+					}
+					$(".t1").html(data.t1);
+					$(".t2").html(data.t2);
+					$(".t3").html(data.t3);
+					$(".t4").html(data.t4);
+					$(".tbegin").html(data.tbegin);
+					$(".tend").html(data.tend);
+					$("#add").after(html);
+//after是在一个节点后面增加元素，append是在一个节点内部的后面增加元素
+				}
+				else{
+					$('.attention2').show();
+				}
+			},
+			error:function(data){
+				alert("数据没传过来!");
+			}
+		})
+	}
+</script>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>仓库管理</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="erp.css"/>
+
+    <style>
+
+        .system-parameter-wrapper{
+            background-color: white;
+            overflow: auto;
+            padding: 0px !important;
+            padding-bottom: -11px;
+            position: absolute;
+            top: 11px;
+            left: 11px;
+            right: 11px;
+            bottom: 11px;
+        }
+
+        #para-wrapper{font-size:14px; }
+        #para-wrapper .para-item h3{font-size:14px;font-weight:bold;margin-bottom:10px;}
+
+        .mod-form-rows .label-wrap { width:260px; }
+        .base { width:160px !important; }
+        .para-item .ui-input{width:220px;font-size:14px;}
+
+        .subject-para .ui-input{width:40px;}
+
+        .code-length .ui-spinbox-wrap{margin-right:0;}
+
+        .books-para input{margin-top:-3px;}
+
+        #currency{width: 68px;}
+        .ui-droplist-wrap .list-item {font-size:14px;}
+
+        .tablabel {
+            font-weight: bold;
+            color: #8e8e8e;
+            font-size: 16px;
+            display: block;
+            padding: 0.5px 30px 10px 30px;
+            width: 100px;
+        }
+        label:hover {
+            cursor: pointer;
+        }
+        section {
+            display: none;
+        }
+        #tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3 {
+            display: block;
+        }
+        input:checked + div label {
+            color: #48bfea;
+            border-bottom: 2px solid #48bfea;
+            display: block;
+        }
+        .hl{
+            width: 90%;
+            margin-top: 12px;
+            margin-left: 26px;
+            height: 2px;
+            background-color: #DDD;
+        }
+
+        #one.clicked{
+            margin-left: 26px;
+            background-position: -25px 0px;
+        }
+
+        #one{
+            margin-left: 26px;
+            background-position: 0px 0px;
+        }
+
+        #two.normal{
+            margin-left: 130px;
+            background-position: -50px 0px;
+        }
+        #two.clicked{
+            margin-left: 130px;
+            background-position: -75px 0px;
+        }
+
+        .backgroundTabs{
+            background: url(/css/img/blueandwhite.png) no-repeat;
+            background-position: -25px 0px;
+            width: 25px;
+            height: 22px;
+            display: inline-block;
+            margin-top: 34px;
+        }
+
+        .mod-form-rows td{
+            border:1px solid #DDD;
+            padding: 5px 20px;
+        }
+
+        .mod-form-rows{
+            border-collapse:collapse;
+        }
+
+        .td1{
+            width: 150px;
+        }
+
+        .td2{
+            width: 60px;
+            text-align: center;
+            padding: 5px 10px !important;
+        }
+
+        .td3{
+            width: 1000px;
+        }
+
+
+        #content1{
+            margin-top: 22px;
+            margin-left: 26px;
+        }
+
+        #content2{
+            margin-top: 22px;
+            margin-left: 26px;
+        }
+
+        .tdtitle{
+            text-align: center;
+        }
+
+        .system-parameter-wrapper .ui-btn{
+            margin-top: 40px;
+            margin-left: 26px;
+            margin-bottom: 15px;
+            background-color: #ff8a00 !important;
+            border: 1px solid #ec8000;
+        }
+        /* new.gif图标 */
+        .newMenuIcon{display: inline-block;width: 30px;height: 16px;background:url(/css/img/new.gif);}
+    </style>
+</head>
+<body>
+<div id="container" class="cf">
+    <div class="layoutCls">
+        <div class="left-menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <h1 style="color: #EEEEEE;"> &nbsp;&nbsp;隆 楷</h1></li>
+                <li>
+                    <a href="main.html" role="button" >
+                        <span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="purchaseplan.html">采购计划</a></li>
+                        <li><a href="purchaseList.html">采购单</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="saleBook.html">销售确认书</a></li>
+                        <li><a href="offPrice.html">特价表</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="putInStorage.html">进仓单</a></li>
+                        <li><a href="分切出仓修改.html">分切出仓单</a></li>
+                        <li><a href="fqcp.html">分切成品出仓单</a></li>
+                        <li><a href="出仓单.html">出仓单</a></li>
+                        <li><a href="出仓单查询2.html">出仓单查询</a></li>
+                        <li><a href="验货单.html">验货单</a></li>
+                        <li><a href="验货单查询2.html">验货单查询</a></li>
+                        <li><a href="问题表.html">问题表</a></li>
+                        <li><a href="问题表查询2.html">问题表查询</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shouldGet.html">应收款明细表</a></li>
+                        <li><a href="shouldPaid.html">应付款明细表</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-error"></i>
+                        <span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="商品.html">商品管理</a></li>
+                        <li><a href="商品查询.html">商品管理查询</a></li>
+                        <li><a href="客户.html">客户管理</a></li>
+                        <li><a href="客户查询.html">客户管理查询</a></li>
+                        <li><a href="供应商.html">供应商管理</a></li>
+                        <li><a href="供应商查询.html">供应商管理查询</a></li>
+                        <li><a href="职员管理.html">职员管理</a></li>
+                        <li><a href="职员管理查询.html">职员管理查询</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-review"></i>
+                        <span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="system.html">系统参数设置</a></li>
+                        <li><a href="storehouse.html">仓库管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="default-main" style="left:129px;">
+            <div class="main-hd cf">
+                <div class="right">
+                    <ul class="advanced-menu cf left">
+                        <li style="position: relative">
+                            <a href="login.html"style="color: #000000;text-decoration:none">退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-bd" style="height: 632px;">
+                <div class="wcsearch" style="padding-left: 10%;height: 60px;background-color: #F5F5F5 !important;">
+                    <div class="right" style="height: 40px;">
+                        <!--<ul class="advanced-menu cf left" style="height: 50px;">
+                            <button style="background-color: #48bfea !important;border: 1px solid #48bfea;" type="submit" class="btn btn-default" onclick="Savedata()">新增</button>
+                        </ul>-->
+                        <ul class="advanced-menu cf left" style="height: 50px;">
+                            <button style="position: relative；background-color: #000000 !important;border: 1px solid #48bfea;"  class="btn btn-default" onclick="refurbish()">刷新</button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="warehousecount" style="height: 632px; display: block;">
+                    <div class="no"> 请点击新增或刷新</div>
+                    <div class="ui-print" style="display: inline-block;">
+
+                        <div class="wtitle">仓库列表</div>
+                        <div class="grid-wrap" style="position:relative;">
+                            <form class="form-inline">
+                                <table class="table table-bordered table-hover" >
+                                    <thead style="color:rgba(33, 32, 26, 0.81)" id="order">
+                                    <tr>
+                                        <!--<th>出仓单号</th>-->
+                                        <th>仓库编号</th>
+                                        <th>仓库名</th>
+
+                                        <!--<th>件号</th>-->
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </form>
+                            <div class="right" style="height: 40px;">
+                                <ul class="advanced-menu cf left" style="height: 50px;">
+                                    <button class="btn btn-default" onclick="save()">新增</button>
+                                </ul>
+                            </div>
+                        </div>
+                        <button style="margin-top: 10px;" class="btn btn-default" onclick="addrow()">增加一行</button>
+                        <!--<button style="margin-top: 10px;" class="btn btn-default" onclick="deleterow()">删除一行</button>-->
+                        <div class="attention" style="display:none">保存成功</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+    function delTr(ckb){
+        //获取选中的复选框，然后循环遍历删除
+        var ckbs=$("input[name="+ckb+"]:checked");
+        if(ckbs.size()==0){
+            alert("要删除指定行，需选中要删除的行！");
+            return;
+        }
+        ckbs.each(function(){
+            $(this).parent().parent().remove();
+        });
+    }
+    function delTr2(){
+        delTr('ckb');
+    }
+    function Savedata(){
+        $('.wtitle>div').eq(0).show();
+        $('.wtitle>div').eq(1).hide();
+        addbook2();
+    }
+
+    function Savedata2(){
+        $.ajax({
+            type:"post",
+            url:"store-management.php",
+            data:$("form").serialize(),
+            dataType:"json",
+            //async:false,
+            success:function(data){ //不用传success=》true
+
+                alert("增加成功！");
+                $('.wtitle>div').eq(0).show();
+                $("#name").html(data.name);
+                $("#number").html(data.number);
+            },
+
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            },
+
+        })
+    }
+    function refurbish(){
+        window.location.href="store-management.html";
+    }
+    function deleteon(){
+
+        $(this).parent().parent().remove();
+    }
+
+
+
+    var count = 0;
+    function addrow(){
+        count++;
+        alert(count);
+//		var $a = $("#a").clone();
+//		$("#saleb").append($a);
+        var html='<tr>';
+        html += '<td><input size="8" name="storeno'+ count+'"></td>' + '<td><input size="8" name="name'+ count+'"></td>' +'</tr>';
+        $("#order").append(html);
+        var i = 1;
+        $(".td").each(function(){       //增加一行后重新更新序号1,2,3......
+            $(this).html(i++);
+        });
+        $(".l tr:last").find(":input").val('');   //将尾行元素克隆来的保存的值清空
+    }
+
+    function save() {
+        if(count == 0){
+            alert("没有新增内容");
+            return;
+        }
+        $.ajax({
+            type:"post",
+            url:"addck.php",
+            data:$("form").serialize(),
+            dataType:"json",
+            //async:false,
+            success:function(data){ //不用传success=》true
+                if(data.success){
+//					$('.attention').show();
+                }
+                else{
+                    alert("保存失败");
+                }
+            },
+            /*error:function(){
+             alert("结果错误！");
+             }*/
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            },
+
+        })
+    }
+
+</script>

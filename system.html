@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>系统参数</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="erp.css"/>
+
+    <style>
+
+        .system-parameter-wrapper{
+            background-color: white;
+            overflow: auto;
+            padding: 0px !important;
+            padding-bottom: -11px;
+            position: absolute;
+            top: 25px;
+            left: 11px;
+            right: 11px;
+            bottom: 11px;
+        }
+
+        #para-wrapper{font-size:18px; }
+        #para-wrapper .para-item h3{font-size:14px;font-weight:bold;margin-bottom:10px;}
+
+        .mod-form-rows .label-wrap {width:260px; }
+        .base { width:160px !important; }
+        .para-item .ui-input{
+            top: 28px;
+            right: 280px;
+            width:220px;font-size:14px;}
+
+        .subject-para .ui-input{width:40px;}
+
+        .code-length .ui-spinbox-wrap{margin-right:0;}
+
+        .books-para input{margin-top:-3px;}
+
+        #currency{width: 68px;}
+        .ui-droplist-wrap .list-item {font-size:14px;}
+
+        .tablabel {
+            font-weight: bold;
+            color: #8e8e8e;
+            font-size: 20px;
+            display: block;
+            padding: 0.5px 30px 10px 30px;
+            width: 200px;
+        }
+        label:hover {
+            cursor: pointer;
+        }
+        section {
+            display: none;
+        }
+        #tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3 {
+            display: block;
+        }
+        input:checked + div label {
+            color: #48bfea;
+            border-bottom: 2px solid #48bfea;
+        }
+        .hl{
+            width: 90%;
+            margin-top: 12px;
+            margin-left: 26px;
+            height: 2px;
+            background-color: #DDD;
+        }
+
+        #one.clicked{
+            margin-left: 26px;
+            background-position: -25px 0px;
+        }
+
+        #one{
+            width: 200px;
+            margin-left: 26px;
+            background-position: 0px 0px;
+        }
+
+        #two.normal{
+            margin-left: 130px;
+            background-position: -50px 0px;
+        }
+        #two.clicked{
+            margin-left: 130px;
+            background-position: -75px 0px;
+        }
+
+        .backgroundTabs{
+            background: url(/css/img/blueandwhite.png) no-repeat;
+            background-position: -25px 0px;
+            width: 25px;
+            height: 22px;
+            display: inline-block;
+            margin-top: 34px;
+        }
+
+        .mod-form-rows td{
+            border:1px solid #DDD;
+            padding: 5px 20px;
+        }
+
+        .mod-form-rows{
+            border-collapse:collapse;
+        }
+
+        .td1{
+            width: 200px;
+        }
+
+        .td2{
+            width: 60px;
+            text-align: center;
+            padding: 5px 10px !important;
+        }
+
+        .td3{
+            width: 1000px;
+        }
+
+
+        #content1{
+            margin-top: 22px;
+            margin-left: 26px;
+        }
+
+        #content2{
+            margin-top: 22px;
+            margin-left: 26px;
+        }
+
+        .tdtitle{
+            text-align: center;
+        }
+
+        .system-parameter-wrapper .ui-btn{
+            margin-top: 40px;
+            margin-left: 26px;
+            margin-bottom: 15px;
+            background-color: #ff8a00 !important;
+            border: 1px solid #ec8000;
+        }
+        /* new.gif图标 */
+        .newMenuIcon{display: inline-block;width: 30px;height: 16px;background:url(/css/img/new.gif);}
+    </style>
+</head>
+<body>
+<div id="container" class="cf">
+    <div class="layoutCls">
+        <div class="left-menu">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <h1 style="color: #EEEEEE;"> &nbsp;&nbsp;隆 楷</h1></li>
+                <li>
+                    <a href="main.html" role="button" >
+                        <span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        ...
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        ...
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="putInStorage.html">进仓单</a></li>
+                        <li><a href="分切出仓修改.html">分切出仓单</a></li>
+                        <li><a href="fqcp.html">分切成品出仓单</a></li>
+                        <li><a href="出仓单.html">出仓单</a></li>
+                        <li><a href="出仓单查询2.html">出仓单查询</a></li>
+                        <li><a href="验货单.html">验货单</a></li>
+                        <li><a href="验货单查询2.html">验货单查询</a></li>
+                        <li><a href="问题表.html">问题表</a></li>
+                        <li><a href="问题表查询2.html">问题表查询</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        ...
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-error"></i>
+                        <span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="商品.html">商品管理</a></li>
+                        <li><a href="商品查询.html">商品管理查询</a></li>
+                        <li><a href="客户.html">客户管理</a></li>
+                        <li><a href="客户查询.html">客户管理查询</a></li>
+                        <li><a href="供应商.html">供应商管理</a></li>
+                        <li><a href="供应商查询.html">供应商管理查询</a></li>
+                        <li><a href="职员管理.html">职员管理</a></li>
+                        <li><a href="职员管理查询.html">职员管理查询</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-review"></i>
+                        <span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="system.html">系统参数设置</a></li>
+                        <li><a href="storehouse.html">仓库管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="default-main" style="left:129px;">
+            <div class="main-hd cf">
+                <div class="right">
+                    <ul class="advanced-menu cf left">
+                        <li style="position: relative">
+                            <a href="login.html" style="color: #000000;text-decoration:none">退出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="wrapper system-parameter-wrapper">
+
+                    <!--<input id="tab1" type="radio" name="tabs" class="tabs" checked="" hidden="">-->
+                    <!--<div id="one" class="s"><label class="tablabel" for="tab1">基础参数</label></div>-->
+                    <!--<input id="tab2" type="radio" name="tabs" class="tabs" hidden="">-->
+                    <!--<div id="two" class="normal backgroundTabs"></div>-->
+
+                    <!--<div class="hl"></div>-->
+                    <div class="contain" style="height: 1000px; display: block;">
+                        <div class="one" style="margin-top: 70px;font-size: 30px;color:#5bc0de;margin-left: 40px;margin-bottom: 20px " > 系统参数</div>
+                        <div class="para-item" >
+                            <form method="post" action="system.php">
+                                <ul class="mod-form-rows" id="establish-form">
+                                    <!--company name：-->
+                                    <li class="row-item">
+
+                                        <div id="name-group" class="form-group">
+                                            <label for="companyName">公司名称：</label>
+                                        </div>
+                                        <div id="name-group1" class="form-group">
+                                            <input type="text" class="ui-input" id="companyName" name="name">
+                                        </div>
+                                    </li>
+                                    <!--//公司地址-->
+                                    <li class="row-item">
+                                        <div class="add-group" class="form-group">
+                                            <label for="companyAddress"style="margin-bottom:20px">公司地址：</label>
+                                        </div>
+                                        <div class="add-group1" class="form-group">
+                                            <input type="text" class="ui-input" id="companyAddress" name="address">
+                                        </div>
+                                    </li><br>
+                                    <!--公司电话-->
+                                    <li class="row-item">
+                                        <div class="tel-group" class="form-group">
+                                            <label for="companyTel"style="margin-bottom:20px">公司电话：</label>
+                                        </div>
+                                        <div class="tel-group1" class="form-group">
+                                            <input type="text"class="ui-input" id="companyTel" name="telephone">
+                                        </div>
+                                    </li><br>
+                                    <!--公司传真-->
+                                    <li class="row-item">
+                                        <div id="form-group1" class="form-group">
+                                            <label for="companyFax">公司传真：</label>
+                                        </div>
+                                        <div id="form-group2" class="form-group">
+                                            <input type="text"  class="ui-input" id="companyFax" name="fax">
+                                        </div>
+                                    </li>
+                                    <!--公司邮编-->
+                                    <li class="row-item">
+                                        <div id="form-group3" class="form-group">
+                                            <label for="postcode">公司邮编：</label>
+                                        </div>
+                                        <div id="form-group4" class="form-group">
+                                            <input type="text"class="ui-input" id="postcode" name="zipcode">
+                                        </div>
+                                    </li>
+                                </ul>
+                                <input style=" background-color: #32A7B8; border-color: #0493a7;" type="submit" value="修改" class="btn btn-primary">
+
+                            </form>
+                            <br>
+                            <button type="submit" class="btn btn-default" onclick="searchpara()">查询</button>
+                        </div>
+                        <div class="ui-print" style="display: none;">
+                            <div class="grid-wrap">
+                                <table class="table table-bordered table-hover" >
+                                    <thead style="color:rgba(33, 32, 26, 0.81)" id="search">
+                                    <tr>
+                                        <th>公司名称</th>
+                                        <th>公司地址</th>
+                                        <th>公司电话</th>
+                                        <th>公司传真</th>
+                                        <th>公司邮编</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attention" style="display:none">无记录</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    function searchpara(){
+        $.ajax({
+
+            url:'searchSystem.php',
+            data:$("form").serialize(),
+            dataType:'json',
+            success:function (data) {
+                if (data.success) {
+                    $('.one').show();
+                    var list = data.list;
+                    var html='<tbody><tr>';
+
+                    for (var i = 0, len = list.length; i < len; i++) {
+                        html += '<td>' + list[i].names + '</td>' + '<td>' + list[i].addresss + '</td>'+ '<td>' + list[i].telephones + '</td>'+ '<td>' + list[i].faxs + '</td>'+ '<td>' + list[i].postcodes + '</td>'+'</tr>';
+                        if(len != i+1)
+                            html += '<tr>';
+                    }
+                    html+='</tbody>';
+                    $('#search').after(html);
+                    $('.contain>div').eq(1).hide();
+                    $('.contain>div').eq(2).show();
+
+//after是在一个节点后面增加元素，append是在一个节点内部的后面增加元素
+                }
+                else{
+                    $('#attention').show();
+
+                }
+            },
+            error:function(data){
+                alert("数据没传过来!");
+            }
+        })
+    }
+
+    function Savedata(){
+        $.ajax({
+            type:"GET",
+            url:'system-para.php',
+            data:$("form").serialize(),
+            dataType:'json',
+            success:function (data) {
+                if (data.success) {
+                    $('.para-item>div').show();
+                    var list = data.list;
+                    var html='<ul>';
+                    for (var i = 0, len = list.length; i < len; i++) {
+                        html += '<li>' + list[i].supplier + '</li>' + '<li>' + list[i].time + '</li>' + '<li>' + list[i].num + '</li>' + '<li>' + list[i].type + '</li>' + '<li>' + list[i].shouldget + '</li>' + '<li>' + list[i].forca + '</li>' + '<li>' + list[i].left + '</li>'+'<li>' + list[i].other + '</li>'+'</ul>'
+                        if(len != i+1)
+                            html += '<ul>';
+                    }
+                    $("#companyName").html(data.companyName);
+                    $("#companyAddress").html(data.companyAddress);
+                    $("#companyTel").html(data.companyTel);
+                    $("#companyFax").html(data.companyFax);
+                    $("#postcode").html(data.postcode);
+
+                }
+                else{
+                    $('.wrapper system-parameter-wrapper>div').eq(0).show();
+                    $('.wrapper system-parameter-wrapper>div').eq(1).hide();
+                }
+            },
+            error:function(data){
+                alert("数据查询失败！");
+            }
+        })
+    }
+
+</script>
+

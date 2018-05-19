@@ -1,0 +1,87 @@
+*{
+	padding:0;
+	margin:0;
+	font-family: "微软雅黑";
+}
+
+
+.header {
+	/*position: absolute;*/
+	width: 100%;
+	height: 365px;
+	background-image: url(image/back2.png);
+	/*使得过长的图片全屏显示中间*/
+}
+.user{
+	/*display: inline;*/
+	width:40px;
+	height:40px;
+	margin-top: 13px;
+	margin-right:20px;
+	float:right;
+	background-size: cover;
+	background-image:url(image/me.jpg);
+	border-radius: 50%;
+}
+
+main{
+	width:1200px;
+	padding:0px;
+	position:relative;
+}
+
+main .slider{
+	width:200px;
+	position:absolute;
+	margin-left:20px;
+	padding:0;
+}
+
+main .slider .user-pic{
+	position: relative;
+	width:200px;
+	height:200px;
+	top:-100px;
+	border-radius:50%;
+	border:8px solid black;
+	background-color: white;
+	background-size: 100%;
+	background-image: url(image/me.jpg);
+}
+main .slider ul{
+	position: relative;
+	list-style:none;
+}
+main .slider ul li{
+	border-bottom:1px solid gainsboro;
+	width:160px;
+}
+
+main .slider ul a.active{
+	color:#F01400;
+}
+
+main .slider ul a{
+	display:block;
+	height:60px;
+	font-size:16px;
+	line-height:60px;
+	text-align:center;
+	color:#787d82;
+	font-family: "微软雅黑";
+	text-decoration: none;
+}
+
+main .slider ul a:hover{
+	color:#14191e;
+}
+
+a{
+	text-decoration: none;
+}
+h1,h2,h3,h5{
+	display: inline;
+}
+
+
+

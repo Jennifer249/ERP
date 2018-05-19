@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <script type="text/javascript" src="/new/dist/static/app.ea26dd00a5823b52da4f.js"></script>
+    <script type="text/javascript" src="/new/dist/static/dll/vendor.501f514.dll.js"></script>
+    <script type="text/javascript" src="/new/dist/static/dll/vendor.0a7be9f.dll.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="erp.css"/>
+    <link rel="stylesheet" type="text/css" href="css/轮播图.css"/>
+</head>
+<body onload="nowPlan()">
+<div id="container" class="cf">
+	<div class = "layoutCls">
+		<div class="left-menu">
+			<ul class="nav nav-pills nav-stacked">
+				<li>
+					<h1 style="color: #EEEEEE;"> &nbsp;&nbsp;隆 楷</h1></li>
+				<li class="active">
+					<a href="main.html" role="button" >
+						<span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+					</a>
+				</li>
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="purchaseplan.html">采购计划</a></li>
+						<li><a href="purchaseList.html">采购单</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="saleBook.html">销售确认书</a></li>
+						<li><a href="offPrice.html">特价表</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="putInStorage.html">进仓单</a></li>
+						<li><a href="分切出仓修改.html">分切出仓单</a></li>
+						<li><a href="fqcp.html">分切成品出仓单</a></li>
+						<li><a href="出仓单.html">出仓单</a></li>
+						<li><a href="出仓单查询2.html">出仓单查询</a></li>
+						<li><a href="验货单.html">验货单</a></li>
+						<li><a href="验货单查询2.html">验货单查询</a></li>
+						<li><a href="问题表.html">问题表</a></li>
+						<li><a href="问题表查询2.html">问题表查询</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="shouldGet.html">应收款明细表</a></li>
+						<li><a href="shouldPaid.html">应付款明细表</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<i class="icon-error"></i>
+						<span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="商品.html">商品管理</a></li>
+						<li><a href="商品查询.html">商品管理查询</a></li>
+						<li><a href="客户.html">客户管理</a></li>
+						<li><a href="客户查询.html">客户管理查询</a></li>
+						<li><a href="供应商.html">供应商管理</a></li>
+						<li><a href="供应商查询.html">供应商管理查询</a></li>
+						<li><a href="职员管理.html">职员管理</a></li>
+						<li><a href="职员管理查询.html">职员管理查询</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<i class="icon-review"></i>
+						<span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="system.html">系统参数设置</a></li>
+						<li><a href="storehouse.html">仓库管理</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="default-main" style="left:129px; background-color: #D5D5D5;">
+			<div class="main-header" style="height: 200px; ">
+				<ul  class="goodsMsg-dtl cf" style="width: 1200px;height: 150px;margin-top: 30px;" >
+					<a href="#">
+				    <li style="margin-left: 0px; border: 1px solid rgb(244, 114, 56); width: 207px; height:150px; display: list-item; background-color: rgb(252, 133, 86);float: left;">
+						<span class="name" style="background-color: #f79b67;font-size: 20px;color: white;">库存预警</span> 
+						<div class="n1" data-number="1" style="text-align: center;font-size: 50px;color: white;margin-top: 20px;">1</div>
+					</li>
+					</a>
+					<a href="#">
+					<li style="margin-left: 20px; border: 1px solid rgb(233, 169, 16); width: 207px; height:150px;  display: list-item; background-color: rgb(248, 187, 57);float: left;">
+						<span class="name" style="background-color: #f9c650;font-size: 20px;color: white;">特价表数</span>
+						<div class="n2" data-number="5"style="text-align: center;font-size: 50px;color: white;margin-top: 20px;">5</div>
+					</li>
+					</a>
+					<a href="#">
+					<li style="margin-left: 20px; border: 1px solid rgb(46, 177, 60); width: 207px; height:150px;  display: list-item; background-color: rgb(71, 192, 86);float: left;" > 
+					    <span class="name" style="background-color: #62ca6c;font-size: 20px;color: white;">采购单数</span>
+					    <div class="n3" data-number="6"style="text-align: center;font-size: 50px;color: white;margin-top: 20px;">6</div>
+					</li>
+					</a>
+					<a href="#">
+					<li style="margin-left: 20px; border: 1px solid rgb(71, 121, 200); width: 207px;  height:150px; display: list-item; background-color: rgb(91, 143, 212);float: left;"> 
+						<span class="name" style="background-color: #779cdb;font-size: 20px;color: white;">销售单数</span>
+						<div class="n4" data-number="3"style="text-align: center;font-size: 50px;color: white;margin-top: 20px;">3</div>
+					</li>
+					</a>
+					<a href="#">
+					<li style="margin-left: 20px; border: 1px solid rgb(255, 222, 173); width: 207px;  height:150px; display: list-item; background-color: rgb(255, 222, 173);float: left;"> 
+						<span class="name" style="background-color: #FFDEAD;;font-size: 20px;color: white;">进仓单数</span>
+						<div class="n5" data-number="2"style="text-align: center;font-size: 50px;color: white;margin-top: 20px;">2</div>
+					</li>
+					</a>
+				</ul>
+				<span class="icon-right next" style="display: block;"></span>
+			
+			<div class="main-bottom-left" style="float: left;height: 450px;width:890px;margin-left: 40px;background: url(image/home3.png);">
+	                <h1 style="color:royalblue;margin-left: 50px;">欢迎来到隆楷进销存储系统!</h1>
+	               <!-- <marquee scrollamount="10" direction="right"style="color:royalblue;margin-left: 50px;font-size: 40px;">欢迎来到隆楷进销存储系统!</marquee>-->
+			</div>
+			<div class="main-bottom-right" style=" float: left;background-color: white;width: 207px;height: 450px;margin-left: 20px;">
+				<ul class="home-link-items cf">
+					<li class="item"style="float:left;margin-top:20px"> 
+						<a title="购货单"href="purchaseList.html"style="text-decoration: none;">
+							<img src="image/1.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;">采购单</span>
+						</a> 
+					</li>
+					<li class="item" style="float: left;margin-left: 20px;margin-top:20px"> 
+					    <a title="销货单"href="saleBook.html"style="text-decoration: none;">
+							<img src="image/2.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;">销售单</span>
+						</a> 
+					</li>
+					<li class="item" style="float:left;margin-top:20px"> 
+						<a title="调拨单"href="putInStorage.html"style="text-decoration: none;">
+							<img src="image/3.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;">进仓单</span>
+						</a> 
+					</li>
+					<li class="item" style="float:left;margin-left: 20px;margin-top:20px">
+						<a title="收款单"href="分切出仓修改.html"style="text-decoration: none;">
+							<img src="image/4.gif" style="width: 60px;height: 60px;display: block;"/>
+						    <span style="color:black;">分切出仓单</span>
+						</a> 
+					</li>
+					<li class="item" style="float:left;margin-top:20px">
+						<a title="盘点"href="purchaseplan.html"style="text-decoration: none;">
+							<img src="image/5.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;margin-left: 5px;">采购计划</span>
+						</a> 
+					</li>
+					<li class="item" style="float:left;margin-left: 20px;margin-top:20px"> 
+						<a title="以销定购"href="offPrice.html"style="text-decoration: none;">
+							<img src="image/6.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;">特价表</span>
+						</a> 
+					</li>
+					<li class="item" style="float:left;margin-top:20px">
+					    <a title="结账反结账"href="shouldPaid.html"style="text-decoration: none;">
+							<img src="image/7.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;">应付款表</span>
+						</a> 
+					</li>
+					<li class="item" style="float:left;margin-left: 10px;margin-top:20px"> 
+						<a title="增值服务"href="shouldGet.html"style="text-decoration: none;">
+							<img src="image/8.gif" style="width: 60px;height: 60px;display: block;"/>
+							<span style="color:black;">应收款表</span>
+						</a> 
+					</li>
+				</ul>
+			</div>
+		    </div>
+		</div>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+    function nowPlan(){
+        $.ajax({
+            type:'GET',
+            url:'main.php',
+            data:{'type':'nowPlan'},
+            dataType:'json',
+            success:function (data) {
+                if(data.success){
+                    $(".n1").html(data.n1);
+					$(".n2").html(data.n2);
+					$(".n3").html(data.n3);
+					$(".n4").html(data.n4);
+					$(".n5").html(data.n5);
+//					css改变css样式
+                }
+                else{
+                    aler("后台无参数");
+				}
+			},
+				error:function(data){
+					alert(XMLHttpRequest.status);
+					alert(XMLHttpRequest.readyState);
+					alert(textStatus);
+				}
+			})
+    }
+</script>

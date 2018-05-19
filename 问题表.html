@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的计划</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="erp.css"/>
+    <link rel="stylesheet" type="text/css" href="css/table.css"/>
+	<link rel="stylesheet" type="text/css" href="css/new.css"/>
+	<script src="js/CalcEval.js"></script>
+</head>
+<body onload="nowPlan()">
+<div id="container" class="cf">
+	<div class = "layoutCls"> 
+		<div class="left-menu">
+			<ul class="nav nav-pills nav-stacked">
+				<li><h1 style="color: #EEEEEE;"> &nbsp;&nbsp;&nbsp;隆 楷</h1></li>
+			    <li>
+			  		<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    	<span class="glyphicon glyphicon-home">&nbsp;&nbsp;首页&nbsp;</span>
+                	</a>
+                	<ul class="dropdown-menu">
+			     	<li><a href="#">Link </a></li>
+
+			    	</ul>
+			  	</li>
+			  	<li>
+			  		<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    	<span class="glyphicon glyphicon-gift">&nbsp;&nbsp;采购&nbsp;</span>
+                	</a>
+                	<ul class="dropdown-menu">
+			      	...
+			    	</ul>
+			 	</li>
+			  	<li>
+			  		<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    	<span class="glyphicon glyphicon-ok-circle">&nbsp;&nbsp;销售&nbsp;</span>
+                	</a>
+                	<ul class="dropdown-menu">
+			     	 ...
+			    	</ul>
+			 	</li>
+			  	<li  class="active">
+				  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+	                    <span class="glyphicon glyphicon-list-alt">&nbsp;&nbsp;仓库&nbsp;</span>
+	                </a>
+                	<ul class="dropdown-menu">
+				    	<li><a href="putInStorage.html">进仓单</a></li>
+                        <li><a href="分切出仓修改.html">分切出仓单</a></li>
+                        <li><a href="fqcp.html">分切成品出仓单</a></li>
+                        <li><a href="出仓单.html">出仓单</a></li>
+                        <li><a href="出仓单查询2.html">出仓单查询</a></li>
+                        <li><a href="验货单.html">验货单</a></li>
+                        <li><a href="验货单查询2.html">验货单查询</a></li>
+                        <li><a href="问题表.html">问题表</a></li>
+                        <li><a href="问题表查询2.html">问题表查询</a></li>
+				    </ul>
+			  	</li>
+			  	<li>
+				  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+	                    <span class="glyphicon glyphicon-font">&nbsp;&nbsp;资金&nbsp;</span>
+	                </a>
+	                <ul class="dropdown-menu">
+				    </ul>
+			 	</li>
+			  	<li>
+				  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+	                    <i class="icon-error"></i>
+	                    <span class="glyphicon glyphicon-remove">&nbsp;&nbsp;资料&nbsp;</span>
+	                </a>
+	                <ul class="dropdown-menu">
+				       <li><a href="商品.html">商品管理</a></li>
+                         <li><a href="商品查询.html">商品管理查询</a></li>
+                        <li><a href="客户.html">客户管理</a></li>
+                         <li><a href="客户查询.html">客户管理查询</a></li>
+                        <li><a href="供应商.html">供应商管理</a></li>
+                         <li><a href="供应商查询.html">供应商管理查询</a></li>
+                        <li><a href="职员管理.html">职员管理</a></li>
+                        <li><a href="职员管理查询.html">职员管理查询</a></li>
+				    </ul>
+			  	</li>
+			  	<li>
+				  	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+	                    <i class="icon-review"></i>
+	                    <span class="glyphicon glyphicon-file">&nbsp;&nbsp;设置&nbsp;</span>
+	                </a>
+	                <ul class="dropdown-menu">
+				      ...
+				    </ul>
+				</li>
+			</ul>
+		</div>
+		<div class="default-main" style="left:129px;">
+			<h2>问题表</h2>
+			<div id="rcontainer" style="width: 1000px;margin: auto;">
+				<div id="header">
+					<div id="left" style="float: left;margin-left: 100px;">
+						<label>供应商简称：</label>
+						<input type="text" name="provider1" id="provider1" value="" />
+					</div>
+					<div id="right" style="float: left; margin-left:250px;">
+						<div>
+							<label>进仓单号：</label>
+							<input type="text" name="w-inputID1" id="w-inputID1" value="" />
+						</div>
+						<div>
+							<label>采购单号：</label>
+							<input type="text" name="purchaseID1" id="purchaseID1" value="" />
+						</div>
+						<div>
+							<label>进仓日期：</label>
+							<input type="date" name="inputdate1" id="inputdate1" value="" />
+						</div>
+					</div>
+				</div>
+			<form action="" method="post">
+			<div id="btn" style="margin-left:160px;">
+				<input type="button" name="create" id="create" value="添加"/>
+				<input type="button" name="delete" id="delete" value="删除" />
+				<input type="button" name="save" id="save" value="保存" />
+			</div>
+				<table border="1px solid #DDD" cellspacing="0" id="tb">
+					<thead>
+						<tr style="font-size: 16px;font-weight:bolder;" >
+							<td>品牌</td>
+							<td>纸种</td>
+							<td>级别</td>
+							<td>克重</td>
+							<td>规格</td>
+							<td>订货重量</td>
+							<td>件号</td>
+							<td>存在问题</td>
+							<td>损失重量</td>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+					</tbody>
+				</table>
+				<div id="bottom">
+					<label>损失率：</label>
+					<span id="loss-HZ"></span>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var ce = new CalcEval();
+	var ntr=0;
+	document.getElementById("create").onclick = function(){
+		ntr++;
+ 		var tab=document.getElementById("tbody");
+		var trd=document.getElementsByTagName("tr");
+		var str1='<td><input type="text" name="brand'+ntr+'" id="brand'+ntr+'"/></td><!--品牌-->';
+		var str2='<td><input type="text" name="kind'+ntr+'" id="kind'+ntr+'"/></td><!--纸种-->';
+		var str3='<td><input type="text" name="rank'+ntr+'" id="rank'+ntr+'"/></td><!--级别-->';
+		var str4='<td><input type="text" name="weight'+ntr+'" id="weight'+ntr+'"/></td><!--克重-->';
+		var	str5='<td><input type="text" name="specif'+ntr+'" id="specif'+ntr+'"/></td><!--规格-->';
+		var str6='<td><input type="text" name="w-order'+ntr+'" id="w-order'+ntr+'" onchange="count1()"/></td><!--订货重量-->';
+		var str7='<td><input type="text" name="numID'+ntr+'" id="numID'+ntr+'"/></td><!--件号-->';
+		var str8='<td><input type="text" name="exits-que'+ntr+'" id="exist-que'+ntr+'" /></td><!--存在问题-->';
+		var str9='<td><input type="text" name="w-loss'+ntr+'" id="w-loss'+ntr+'"onchange="count2()"/></td><!--损失重量-->';
+		//var str10='<td id="loss-HZ'+ntr+'></td><!--损失率-->';
+		var str=str1+str2+str3+str4+str5+str6+str7+str8+str9;
+		if(trd.length>1){
+			var tr=document.createElement('tr');
+			tab.appendChild(tr);
+			tl=document.getElementsByTagName("tr");
+			tl[trd.length-1].innerHTML=str;
+		}
+		else{
+			tab.innerHTML+=str;
+			
+		}
+//		var s=new Array('brand','kind','rank','weight','specif','w-order','numID','exits-que','w-loss');
+//		for(var i=1;i<ntr;i++){
+//			for(var j=0;j<s.length;j++){
+//				s[j]=s[j]+i;
+//				document.getElementById(s[j]).value=document.getElementById(s[j]).value;
+//			}
+//		}
+
+}
+	document.getElementById("delete").onclick=function(){
+		var tbo=document.getElementById("tbody");
+		var tr=tbo.childNodes;
+		if(ntr<=0){
+			alert("您不能继续操作了！");
+			ntr=1;
+		}
+		else{
+			tbo.removeChild(tr[ntr]);
+		}
+		ntr--;
+	}
+	//除法函数
+	function accDiv(arg1,arg2){ 
+    var t1=0,t2=0,r1,r2; 
+    try{t1=arg1.toString().split(".")[1].length}catch(e){} 
+    try{t2=arg2.toString().split(".")[1].length}catch(e){} 
+    with(Math){ 
+        r1=Number(arg1.toString().replace(".","")) 
+        r2=Number(arg2.toString().replace(".","")) 
+        return (r1/r2)*pow(10,t2-t1); 
+    } 
+}
+	function count1(x){
+		var oId='w-order';
+		var lId='w-loss';
+		var sum1=0;
+		var sum2=0;
+		for(var i=1;i<=ntr;i++){
+			var oID=oId+i;
+			var lID=lId+i;
+			sum1+=parseFloat(document.getElementById(oID).value);
+			sum2+=parseFloat(document.getElementById(lID).value);
+		}
+		var str='';
+		str=sum2+'/'+sum1;
+		var rate=ce.eval(str);
+		var loss=document.getElementById("loss-HZ");
+		loss.innerHTML=rate;
+	}
+	function count2(x){
+		var oId='w-order';
+		var lId='w-loss';
+		var sum1=0;
+		var sum2=0;
+		for(var i=1;i<=ntr;i++){
+			var oID=oId+i;
+			var lID=lId+i;
+			sum1+=parseFloat(document.getElementById(oID).value);
+			sum2+=parseFloat(document.getElementById(lID).value);
+		}
+		var str='';
+		str=sum2+'/'+sum1;
+		var rate=ce.eval(str);
+		var loss=document.getElementById("loss-HZ");
+		loss.innerHTML=rate;
+	}
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    function nowPlan(){
+        $.ajax({
+            type:'GET',
+            url:'stuMyplan.php',
+            data:{'type':'nowPlan'},
+            dataType:'json',
+            success:function (data) {
+                if(data.success){
+                    $('#small-main > div').eq(1).hide();
+                    $('#small-main > div').eq(0).show();
+                    $(".plan").html(data.plan);
+                    $(".allDay").html(Math.ceil(218/data.plan));
+                    $(".finishPoetry").html(data.now+"/218");
+                    $(".leave").html(Math.ceil((218-data.now)/data.plan));
+                    $(".first").css("width",data.now/218*100+'%');
+                    $(".second").css("width",(data.now/data.plan)/(218/data.plan)*100+'%');
+//					css改变css样式
+                }
+                else{
+                    $('#small-main > div').eq(0).hide();
+                    $('#small-main > div').eq(1).show();
+                }
+            }
+        })
+    }
+</script>
