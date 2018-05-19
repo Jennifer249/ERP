@@ -13,8 +13,16 @@ typora-root-url: jpg
 
 订单查询：
 
+<<<<<<< HEAD
 ![1](/1.png)
 
 新增订单：
 
 ![2](/2.png)
+=======
+![1](jpg/1.png)
+
+新增订单：
+
+![2](jpg/2.png)
+>>>>>>> 564d87ccb27052f93324eaeab20fbeab62720e46
